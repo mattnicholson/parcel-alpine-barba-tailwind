@@ -1,0 +1,8 @@
+h1 {
+	@apply text-vw font-bold underline mb-8 bg-black text-white;
+	@apply rounded-lg;
+
+	@screen lg {
+		@apply rounded-none;
+	}
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" x-data :class="$store.darkMode.on && 'dark'">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<script type="module" src="./index.js"></script>
+		<link href="./index.css" rel="stylesheet" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<title>Alpine + Barba</title>
+	</head>
+	<body
+		x-data
+		:class="$store.darkMode.on ? 'dark' : 'light'"
+		data-barba="wrapper"
+	>
+		<h1 x-data x-transitionText="$store.page.title"></h1>
+		<button
+			x-data
+			@click="$store.darkMode.toggle()"
+			x-text="$store.darkMode.on ? 'Switch to Light mode' : 'Switch to Dark mode'"
+		>
+			Toggle Dark Mode
+		</button>
+		<nav>
+			<ul>
+				<li><a href="./">Home</a></li>
+				<li><a href="./?p=2">Alt Home</a></li>
+				<li><a href="./page2.html">Page 2</a></li>
+			</ul>
+		</nav>
+		<div data-barba="container" data-barba-namespace="home">
+			<div x-data x-effect="$store.page.set('The Page Title')"></div>
+			<div x-data>
+				<span x-transitionText="$store.darkMode.label()"></span>
+			</div>
+			<div x-data="dropdown">
+				<button @click="toggle">Toggle Content</button>
+
+				<div x-show="open">Content...</div>
+			</div>
+
+			<div x-data="dropdown">
+				<button @click="toggle">Toggle Content</button>
+
+				<div x-show="open">Content...</div>
+			</div>
+		</div>
+	</body>
+</html>
