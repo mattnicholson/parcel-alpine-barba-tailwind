@@ -14,6 +14,7 @@ import "./js/state/darkMode";
 // Components - (app-agnostic) components that react to props in a consistent way
 import "./js/components/transitionText";
 import "./js/components/dropdown";
+import "./js/components/image";
 
 // App
 ready(() => {
