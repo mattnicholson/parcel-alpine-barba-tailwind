@@ -35,8 +35,22 @@
 		</header>
 		<nav>
 			<ul>
-				<li><a href="./">Index</a></li>
-				<li><a href="./?p=components">Components</a></li>
+				<li>
+					<a
+						x-data
+						:class="$store.route.is('/') && 'active'"
+						href="./"
+						>Index</a
+					>
+				</li>
+				<li>
+					<a
+						x-data
+						:class="$store.route.match('components') && 'active'"
+						href="./?p=components"
+						>Components</a
+					>
+				</li>
 			</ul>
 		</nav>
 		<main>

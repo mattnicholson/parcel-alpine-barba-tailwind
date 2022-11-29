@@ -9,8 +9,15 @@ header {
 		@apply fixed bottom-8 left-6;
 	}
 }
+
 nav {
 	@apply fixed top-14 left-8 font-mono;
+	a {
+		@apply transition duration-500;
+	}
+	.active {
+		@apply text-emerald-400;
+	}
 }
 
 main {

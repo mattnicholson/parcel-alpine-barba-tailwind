@@ -1,8 +1,7 @@
 {
 	"name": "parcel-starter",
 	"source": [
-		"src/index.html",
-		"src/page2.html"
+		"src/index.html"
 	],
 	"browserslist": ">0.3%, defaults",
 	"scripts": {

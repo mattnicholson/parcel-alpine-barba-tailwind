@@ -15,11 +15,18 @@ Example Usage:
 init(() => {
 	Alpine.store("route", {
 		href: "",
+
 		match(rule) {
 			return this.href.match(rule);
 		},
 		is(rule) {
 			return this.href === rule;
+		},
+		willMatch(rule) {
+			return this.loadingHref.match(rule);
+		},
+		willBe(rule) {
+			return this.loadingHref === rule;
 		},
 		update(url) {
 			// Convert to path
