@@ -22,35 +22,68 @@
 		:class="$store.darkMode.on ? 'dark' : 'light'"
 		data-barba="wrapper"
 	>
-		<h1 x-data x-transitionText="$store.page.title"></h1>
-		<button
-			x-data
-			@click="$store.darkMode.toggle()"
-			x-text="$store.darkMode.on ? 'Switch to Light mode' : 'Switch to Dark mode'"
-		>
-			Toggle Dark Mode
-		</button>
+		<header>
+			<h1 x-data x-transitionText="$store.page.title"></h1>
+			<div id="dakModeToggle">
+				<button
+					x-data
+					@click="$store.darkMode.toggle()"
+					class="Toggle"
+					:class="$store.darkMode.on ? 'active' : 'inactive'"
+				></button>
+			</div>
+		</header>
 		<nav>
 			<ul>
-				<li><a href="./">Home</a></li>
-				<li><a href="./?p=2">Alt Home</a></li>
-				<li><a href="./page2.html">Page 2</a></li>
+				<li><a href="./">Index</a></li>
+				<li><a href="./?p=components">Components</a></li>
 			</ul>
 		</nav>
-		<div data-barba="container" data-barba-namespace="home">
+		<main>
+			<div data-barba="container" data-barba-namespace="home">
+				<div
+					x-data
+					x-effect="$store.route.update(window.location.href)"
+				>
+					<template x-if="$store.route.is('/')">
+						<div>
+							<div>Home Page</div>
+							<div
+								x-data
+								x-effect="$store.page.set('Home')"
+							></div>
+							<div
+								class="Image"
+								x-data="image"
+								x-bind="lazy"
+								data-src="/img/unsplash.jpg"
+							></div>
+						</div>
+					</template>
+					<template x-if="$store.route.match('components')">
+						<div>
+							<div>Components Page</div>
+							<div
+								x-data
+								x-effect="$store.page.set('Components')"
+							></div>
+						</div>
+					</template>
+				</div>
+
+				<!--
 			<h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
-			<div x-data x-effect="$store.page.set('Home')"></div>
-
-			<div x-data :class="$store.darkMode.on && 'bg-black'"></div>
-
-			<div style="height: 100vh; background: #ddd"></div>
+			
 
 			<div
-				class="Image"
-				x-data="image"
-				x-bind="lazy"
-				data-src="/img/img.jpg"
-			></div>
-		</div>
+				style="height: 100vh"
+				x-data
+				:class="$store.darkMode.on ? 'bg-slate-800' : 'bg-slate-200'"
+			>
+				<div x-data x-text="$store.route.href"></div>
+			</div>
+			-->
+			</div>
+		</main>
 	</body>
 </html>

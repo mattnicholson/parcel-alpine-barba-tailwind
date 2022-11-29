@@ -13,9 +13,7 @@ Lazy image loader
 
 Example Usage:
 ---------------
-<div x-data="image" x-bind="lazy" data-src="/path/to/image.jpg">
-
-</div>
+<div x-data="image" x-bind="lazy" data-src="/path/to/image.jpg"></div>
 
 */
 

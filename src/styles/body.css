@@ -1,3 +1,18 @@
 body {
 	@apply transition duration-700 p-4 bg-white dark:bg-black dark:text-white;
 }
+
+header {
+	@apply absolute top-8 left-60;
+
+	#dakModeToggle {
+		@apply fixed bottom-8 left-6;
+	}
+}
+nav {
+	@apply fixed top-14 left-8 font-mono;
+}
+
+main {
+	@apply absolute top-40 left-60;
+}

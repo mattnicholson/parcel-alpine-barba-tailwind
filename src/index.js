@@ -10,6 +10,7 @@ import { init } from "./js/utils/alpine";
 // State — (app-specific) components that deal with specific state values in the alpine store
 import "./js/state/page";
 import "./js/state/darkMode";
+import "./js/state/route";
 
 // Components - (app-agnostic) components that react to props in a consistent way
 import "./js/components/transitionText";

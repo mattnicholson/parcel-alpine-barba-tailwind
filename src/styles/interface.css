@@ -1,0 +1,20 @@
+.Toggle {
+	@apply relative block bg-slate-600 dark:bg-slate-300;
+	width: 60px;
+	height: 30px;
+	border-radius: 30px;
+
+	&:after {
+		content: "";
+		width: 30px;
+		height: 30px;
+
+		@apply absolute block rounded-full transition top-1/2 left-0 bg-black dark:bg-white -translate-y-1/2 scale-75;
+	}
+
+	&.active {
+		&:after {
+			@apply translate-x-full;
+		}
+	}
+}
